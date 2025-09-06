@@ -199,6 +199,50 @@ if __name__ == "__main__":
         "AI-SinglePropertyPrediction-vac_en-dft_3d_chipsff-test-mae.csv.zip",
     ]
 
+    prop_pred_benchmarks = [
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-optb88vdw_total_energy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mbj_bandgap-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-bulk_modulus_kv-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-shear_modulus_gv-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-slme-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-spillage-dft_3d-test-mae.csv.zip",
+    ]
+    prop_pred_benchmarks_more = [
+        "AI-SinglePropertyPrediction-avg_elec_mass-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-avg_hole_mass-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-bulk_modulus_kv-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-dfpt_piezo_max_dielectric-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-dfpt_piezo_max_dij-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-ehull-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-encut-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-energy_per_atom-qe_tb-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-epsx-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-epsy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-epsz-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-exfoliation_energy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-f_enp-qe_tb-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-final_energy-qe_tb-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-formation_energy_peratom-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-indir_gap-qe_tb-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-kpoint_length_unit-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-magmom_oszicar-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-max_efg-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mbj_bandgap-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mepsx-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mepsy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-mepsz-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-n_Seebeck-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-n_powerfact-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-optb88vdw_bandgap-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-optb88vdw_total_energy-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-ph_heat_capacity-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-shear_modulus_gv-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-slme-dft_3d-test-mae.csv.zip",
+        "AI-SinglePropertyPrediction-spillage-dft_3d-test-mae.csv.zip",
+    ]
+
     process_benchmarks(
         benchmarks=catalysis_benchmarks,
         metric="pearsonr",
@@ -228,4 +272,10 @@ if __name__ == "__main__":
         metric="pearsonr",
         replacements=["AI-SinglePropertyPrediction-", "-test-mae.csv.zip"],
         md_path="CHIPS_FF.md",
+    )
+    process_benchmarks(
+        benchmarks=prop_pred_benchmarks,
+        metric="pearsonr",
+        replacements=["AI-SinglePropertyPrediction-", "-test-mae.csv.zip"],
+        md_path="PropertyPrediction.md",
     )
